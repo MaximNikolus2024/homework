@@ -1,9 +1,9 @@
 package lesson18.homework;
 
-public class chicken {
+public class Chicken {
     String name;
     int weight;
-    public chicken(String name, int weight){
+    public Chicken(String name, int weight){
         this.name = name;
         this.weight = weight;
     }

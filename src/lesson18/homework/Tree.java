@@ -1,9 +1,9 @@
 package lesson18.homework;
 
-public class three {
+public class Tree {
     String name;
     int grow;
-    public three(String name , int grow){
+    public Tree(String name , int grow){
         this.name = name;
         this.grow = grow;
     }

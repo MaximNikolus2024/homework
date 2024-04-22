@@ -1,11 +1,11 @@
 package lesson18.homework;
 
-public class student {
+public class Student {
     String name;
     int yearOfEducation;
     int age;
     int knowledge;
-    public student(String name, int yearOfEducation, int age) {
+    public Student(String name, int yearOfEducation, int age) {
         this.name = name;
         this.yearOfEducation = yearOfEducation;
         this.age = age;
