@@ -12,6 +12,22 @@ public class Student {
         this.age = age;
     }
 
+    public int getYearOfEducation() {
+        return yearOfEducation;
+    }
+
+    public void setYearOfEducation(int yearOfEducation) {
+        this.yearOfEducation = yearOfEducation;
+    }
+
+    public int getKnowledge() {
+        return knowledge;
+    }
+
+    public void setKnowledge(int knowledge) {
+        this.knowledge = knowledge;
+    }
+
     public String getName(){
         return name;
     }
