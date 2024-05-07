@@ -5,24 +5,30 @@ public class TV {
     private int currentChanel;
     TVRemote tvRemote;
 
-    public TV(double frequency, int currentChanel) {
+    public TV(double frequency) {
         this.frequency = frequency;
-        this.currentChanel = currentChanel;
+        currentChanel = 1;
     }
 
     public double getFrequency() {
         return frequency;
     }
 
-    public void setFrequency(double frequency) {
-        this.frequency = frequency;
-    }
 
     public int getCurrentChanel() {
         return currentChanel;
     }
+    public void chanelForward(){
+        currentChanel ++;
+    }
+    public void channelBackward(){
+        if (currentChanel > 1){
+            currentChanel --;
+        }
+    }
 
     public void setCurrentChanel(int currentChanel) {
+        if (currentChanel > 0)
         this.currentChanel = currentChanel;
     }
 }
