@@ -1,6 +1,9 @@
 package lesson18.homework;
 
+import java.util.Objects;
+
 public class Student {
+    Object o = new Object();
     private String name;
     private int yearOfEducation;
     private int age;
@@ -57,6 +60,39 @@ public void setAge(int age){
         System.out.println("лишь бы на отлично.");
         knowledge++;
     }
+    @Override
+    public String toString(){
+        return "name: " + this.name
+                + " yearOfEducation: " + this.yearOfEducation
+                + ", age: " + this.age
+                + ", knowledge: " + this.knowledge;
+
+
+    }
+@Override
+    public int hashCode(){
+        return Objects.hash(name,yearOfEducation,age,knowledge);
+}
+@Override
+    public boolean equals(Object o){
+        if (o == this){
+            return true;
+        }
+        if (o instanceof Student){
+            Student student = (Student) o;
+            return student.name.equals(this.name)
+                    && student.yearOfEducation == this.yearOfEducation
+                    && student.age == this.age
+                    && student.knowledge == this.knowledge;
+
+    }
+        return false;
+}
+
 
 }
+
+
+
+
 
