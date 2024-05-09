@@ -7,7 +7,6 @@ public class Student {
     private String name;
     private int yearOfEducation;
     private int age;
-    private int knowledge;
 
     public Student(String name, int yearOfEducation, int age) {
         this.name = name;
@@ -22,15 +21,6 @@ public class Student {
     public void setYearOfEducation(int yearOfEducation) {
         this.yearOfEducation = yearOfEducation;
     }
-
-    public int getKnowledge() {
-        return knowledge;
-    }
-
-    public void setKnowledge(int knowledge) {
-        this.knowledge = knowledge;
-    }
-
     public String getName(){
         return name;
     }
@@ -55,23 +45,17 @@ public void setAge(int age){
     public void run() {
         System.out.println("Ё моё, опаздываю!");
     }
-
-    public void study() {
-        System.out.println("лишь бы на отлично.");
-        knowledge++;
-    }
     @Override
     public String toString(){
         return "name: " + this.name
                 + " yearOfEducation: " + this.yearOfEducation
-                + ", age: " + this.age
-                + ", knowledge: " + this.knowledge;
+                + ", age: " + this.age;
 
 
     }
 @Override
     public int hashCode(){
-        return Objects.hash(name,yearOfEducation,age,knowledge);
+        return Objects.hash(name,yearOfEducation,age);
 }
 @Override
     public boolean equals(Object o){
@@ -82,8 +66,7 @@ public void setAge(int age){
             Student student = (Student) o;
             return student.name.equals(this.name)
                     && student.yearOfEducation == this.yearOfEducation
-                    && student.age == this.age
-                    && student.knowledge == this.knowledge;
+                    && student.age == this.age;
 
     }
         return false;
