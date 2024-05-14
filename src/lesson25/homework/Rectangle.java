@@ -1,32 +1,32 @@
 package lesson25.homework;
 
 public class Rectangle extends Shape {
-    private double l;
-    private double h;
+    private double length;
+    private double width;
 
     public Rectangle(double l, double h) {
-        this.l = l;
-        this.h = h;
+        this.length = l;
+        this.width = h;
     }
 
-    public double getL() {
-        return l;
+    public double getLength() {
+        return length;
     }
 
-    public void setL(double l) {
-        this.l = l;
+    public void setLength(double length) {
+        this.length = length;
     }
 
-    public double getH() {
-        return h;
+    public double getWidth() {
+        return width;
     }
 
-    public void setH(double h) {
-        this.h = h;
+    public void setWidth(double width) {
+        this.width = width;
     }
 
     @Override
     public double getPerimeter() {
-        return l * h;
+        return 2 * (width + length);
     }
 }

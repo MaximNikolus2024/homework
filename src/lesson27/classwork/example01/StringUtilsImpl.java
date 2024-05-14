@@ -1,0 +1,98 @@
+package lesson27.classwork.example01;
+
+import lesson27.classwork.StringUtils;
+
+import java.util.Scanner;
+
+public class StringUtilsImpl implements StringUtils {
+    @Override
+    public boolean isPalindrome(String word) {
+        return (word.equalsIgnoreCase(reverse(word)));
+    }
+
+    @Override
+    public boolean isPangram(String sentence) {
+        return false;
+    }
+
+    @Override
+    public byte[] parseIp(String ip) {
+        return new byte[0];
+    }
+
+    @Override
+    public String encrypt(String text) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < text.length(); i++) {
+            char ch = text.charAt(i);
+            sb.append((char) (ch + 3));
+        }
+        return sb.toString();
+    }
+
+    @Override
+    public String decrypt(String data) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < data.length(); i++) {
+            char ch = data.charAt(i);
+            sb.append((char) (ch - 3));
+        }
+        return null;
+    }
+
+    @Override
+    public int countOccurencies(String text, char letter) {
+        if (text == null){
+            return 0;
+        }
+         int counter = 0;
+        for (int i = 0; i < text.length(); i++) {
+        if (text.charAt(i) == letter){
+            counter++;
+        }
+        }
+
+        return counter;
+    }
+
+    @Override
+    public String reverse(String text) {
+        StringBuilder sb = new StringBuilder();
+        for(int i = text.length() - 1; i >= 0; i--){
+            sb.append(text.charAt(i));
+        }
+        return sb.toString();
+    }
+
+    @Override
+    public String wordReverse(String text) {
+        StringBuilder sb = new StringBuilder();
+        String[] words = text.split(" ");
+        for (int i = words.length - 1; i >= 0; i--){
+            sb.append(words[i]).append(" ");
+        }
+
+        return sb.toString();
+    }
+
+    @Override
+    public String toCamelCase(String text) {
+        StringBuilder sb = new StringBuilder();
+        String[] words = text.split(" ");
+
+        for (int i = 0; i < words.length; i++) {
+            if (words[i].isEmpty()){
+                continue;
+            }
+            if (i == 0){
+                sb.append(words[i].toLowerCase());
+            }else {
+                sb.append(words[i].substring(0,1).toUpperCase())
+                        .append(words[i].substring(1).toLowerCase());
+            }
+        }
+        return sb.toString();
+
+    }
+
+}

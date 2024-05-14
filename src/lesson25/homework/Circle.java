@@ -3,6 +3,10 @@ package lesson25.homework;
 public class Circle extends Shape {
     private double r;
 
+    public Circle(double r) {
+        this.r = r;
+    }
+
     public double getR() {
         return r;
     }
@@ -13,6 +17,6 @@ public class Circle extends Shape {
 
     @Override
     public double getPerimeter() {
-        return Math.PI * Math.pow(r,2);
+        return 2 * Math.PI * r;
     }
 }
