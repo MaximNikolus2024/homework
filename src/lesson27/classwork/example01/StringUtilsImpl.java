@@ -12,11 +12,25 @@ public class StringUtilsImpl implements StringUtils {
 
     @Override
     public boolean isPangram(String sentence) {
-        return false;
+        sentence = sentence.toLowerCase();
+        boolean[] found = new boolean[26];
+        for (int i = 0; i < sentence.length(); i++) {
+            int code = sentence.charAt(i) - 'a';
+            if (code >= 0 && code < 26){
+                found[code] = true;
+            }
+        }
+        for (int i = 0; i < found.length; i++) {
+            if (!found[i]){
+                return false;
+            }
+        }
+        return true;
     }
 
     @Override
     public byte[] parseIp(String ip) {
+
         return new byte[0];
     }
 
@@ -72,7 +86,7 @@ public class StringUtilsImpl implements StringUtils {
             sb.append(words[i]).append(" ");
         }
 
-        return sb.toString();
+        return sb.toString().trim();
     }
 
     @Override
