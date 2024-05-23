@@ -3,21 +3,21 @@ package lesson29.classwork.homework;
 import java.util.Objects;
 
 public class Kettlebell implements Comparable<Kettlebell> {
-    private String material;
+    private Materials material;
     private Colors color;
     private double weight;
 
-    public Kettlebell(String material, Colors color, double weight) {
+    public Kettlebell(Materials material, Colors color, double weight) {
         this.material = material;
         this.color = color;
         this.weight = weight;
     }
 
-    public String getMaterial() {
+    public Materials getMaterial() {
         return material;
     }
 
-    public void setMaterial(String material) {
+    public void setMaterial(Materials material) {
         this.material = material;
     }
 
